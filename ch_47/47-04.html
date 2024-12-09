@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>잘못된 CSS 선택자</title>
+    </head>
+    <body>
+        <button id="1">커스텀 버튼</button>
+
+        <script>
+            // const $elem1 = document.querySelector('#1'); // 이러면 에러남
+            // 위 주석의 결과에서는 $elem1 에 null 이 할당된다.
+            const $elem2 = document.querySelector("#\\31"); // 이러면 에러 안남 Escape 처리
+            // 여기서 `\31`은 Unicode Escape로 숫자 `1`을 나타내며, 뒤에 공백이 필요합니다.
+            $elem2.addEventListener('click', () => {
+                $elem2.parentNode.removeChild($elem2);
+            })
+        </script>
+    </body>
+</html>
+

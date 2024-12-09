@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>DOM error</title>
+    </head>
+    <body>
+        <script>
+            const $button = document.querySelector("button");
+
+            // DOM에 button 요소가 존재하지 않으면 querySelector 메서드는 에러를 발생시키지 않고 null을 반환함
+            // 즉, 에러처리가 발생하지 않고 null 값을 참조하는 아래 코드같은 상황이 발생할 수 있다.
+
+            $button.classList.add("disabled");
+        </script>
+    </body>
+</html>
+
+
